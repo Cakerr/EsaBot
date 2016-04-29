@@ -7,14 +7,18 @@ function UrlTitle() {}
 
 UrlTitle.prototype.getTitle = function (str, callback) {
     
-    var regex = /(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \? \= c\.-]*)*\/?$/;
-    var url = String(str.match(/(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \? \= c\.-]*)*\/?/));
+    var url = str.match(/(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \? \= c\.-]*)*\/?/);
 
     try {
-        var url = url.split(" ")[0];
-        request(String(url), function (error, response, html) {
+
+        var url = url[0].split(" ");
+        
+        console.log("Retrieving: "+url[0])
+        request(url[0], function (error, response, html) {
+            
+            console.log("\t statuscode: " +response.statusCode);
+            
             if (!error && response.statusCode === 200) {
-                console.log(url);
                 var $ = cheerio.load(html);
                 var title = $('head title').text();
                 if (title) {
