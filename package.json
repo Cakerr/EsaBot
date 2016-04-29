@@ -5,6 +5,8 @@
     "author": "cakerr",
     "contributors": [],
     "dependencies": {
-        "irc": "*"
+        "irc": "*",
+        "request": "*",
+        "cheerio": "*"
     }
 }
