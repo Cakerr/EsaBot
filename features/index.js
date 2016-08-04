@@ -1,9 +1,7 @@
 var features = [];
 var commands = {};
 var moro = require("./MoroMolot");
-var help = require("./help");
 features.push(moro);
-features.push(help);
 
 for (var i = 0; i < features.length; i++) {
     Object.keys(features[i].commands).forEach(function (key, index) {
@@ -17,8 +15,7 @@ commands["!help"] = function (bot, from, to, message) {
         commandsString += key + " ";
     });
     bot.say(to, commandsString);
-}
-
+};
 
 module.exports.features = {
     commands: commands
