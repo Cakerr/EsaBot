@@ -1,4 +1,4 @@
-# MoloBot
+# EsaBot
 
 ## Installation
 Download and install [node.js](https://nodejs.org/). </br>
