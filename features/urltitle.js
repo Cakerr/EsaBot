@@ -14,19 +14,26 @@ UrlTitle.prototype.getTitle = function (str, callback) {
     try {
 
         var url = url[0].split(" ");
+        
+        var options = {
+            url: url[0],
+            headers: {
+                'User-Agent': 'request'
+            }
+        };
 
         console.log("Retrieving: " + url[0]);
-        request(url[0], function (error, response, html) {
+        request(options, function (error, response, html) {
 
             console.log("\t statuscode: " + response.statusCode);
 
             if (!error && response.statusCode === 200) {
                 var $ = cheerio.load(html);
-                
+
                 var title = $('head title').text();
                 if (title) {
                     title = title.trim();
-                    
+
                     callback(title);
 
                 }
