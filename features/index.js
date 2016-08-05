@@ -1,6 +1,6 @@
 var features = [];
 var commands = {};
-var moro = require("./MoroMolot");
+var moro = require("./moro");
 features.push(moro);
 
 for (var i = 0; i < features.length; i++) {

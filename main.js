@@ -20,7 +20,7 @@ bot.addListener('error', function(message){
 bot.addListener('message', function (from, to, message) {
     var msg = message.toLowerCase();
     //console.log(message);
-    var msg = message.split(" ")[0];
+    var msg = msg.split(" ")[0];
     //console.log(msg);
     
     if (features.commands.hasOwnProperty(msg)){
