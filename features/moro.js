@@ -1,5 +1,5 @@
-var moro = function (bot, from, to, message) {
-    bot.say(to, "Moi " + from + "!");
+var moro = function (bot, from, to, message, callback) {
+    callback("Moi " + from + "!");
 };
 
 

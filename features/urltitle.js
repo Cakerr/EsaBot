@@ -14,7 +14,7 @@ UrlTitle.prototype.getTitle = function (str, callback) {
     try {
 
         var url = url[0].split(" ");
-        
+            
         var options = {
             url: url[0],
             headers: {

@@ -11,12 +11,12 @@ require("fs").readdirSync("./features/").forEach(function (file) {
     }
 });
 //TODO Find better place for this
-commands["!help"] = function (bot, from, to, message) {
+commands["!help"] = function (bot, from, to, message, callback) {
     var commandsString = "Available commands: ";
     Object.keys(commands).forEach(function (key, index) {
         commandsString += key + " ";
     });
-    bot.say(to, commandsString);
+    callback(commandsString);
 };
 
 module.exports.features = {

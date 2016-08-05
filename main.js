@@ -25,7 +25,13 @@ bot.addListener('message', function (from, to, message) {
     
     if (features.commands.hasOwnProperty(msg)){
         console.log("Command: " +msg);
-        features.commands[msg](bot, from, to, message);
+        features.commands[msg](bot, from, to, message, function(ret, err){
+            if (!err){
+                bot.say(to, ret);
+            } else {
+                console.log(err);
+            }
+        });
     }
     urltitle.getTitle(message, function (title) {
         if(!title){
