@@ -8,5 +8,9 @@
         "irc": "*",
         "request": "*",
         "cheerio": "*"
+    },
+    "scripts": {
+        "start": "node main.js"
     }
+
 }
