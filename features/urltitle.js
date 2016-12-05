@@ -31,9 +31,11 @@ UrlTitle.prototype.getTitle = function (str, callback) {
                 var $ = cheerio.load(html);
 
                 var title = $('head title').text();
-                if (title) {
+                
+		if (title) {
                     title = title.trim();
-
+		    title = title.replace(/\n/g, " | ");
+		    console.log(title);
                     callback(title);
 
                 }
